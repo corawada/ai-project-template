@@ -15,6 +15,6 @@ jobs:
     if: github.event.repository.visibility == 'public' || vars.ENABLE_DEPENDENCY_REVIEW == 'true'
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/dependency-review-action@v4
+      - uses: actions/dependency-review-action@v5
         with:
           fail-on-severity: high
