@@ -1,0 +1,28 @@
+name: codeql
+
+on:
+  # A language-agnostic template cannot safely guess the project's CodeQL
+  # language. Run this once manually after adding application code, then add
+  # pull_request/push/schedule triggers for that project.
+  workflow_dispatch:
+    inputs:
+      languages:
+        description: Comma-separated CodeQL language identifiers
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: analyze selected languages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ inputs.languages }}
+      - uses: github/codeql-action/analyze@v3
