@@ -10,7 +10,9 @@ jobs:
   dependency-review:
     name: dependency review
     runs-on: ubuntu-latest
-    if: github.event.repository.visibility == 'public'
+    # Private repositories require GitHub Advanced Security. Set the repository
+    # variable ENABLE_DEPENDENCY_REVIEW=true after enabling it.
+    if: github.event.repository.visibility == 'public' || vars.ENABLE_DEPENDENCY_REVIEW == 'true'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/dependency-review-action@v4

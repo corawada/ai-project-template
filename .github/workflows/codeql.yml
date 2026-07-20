@@ -15,6 +15,10 @@ permissions:
 jobs:
   analyze:
     name: analyze actions
+    # Code scanning is available by default for public repositories. A private
+    # repository must enable GitHub Advanced Security first, then create the
+    # repository variable ENABLE_CODEQL=true to opt in to this job.
+    if: github.event.repository.visibility == 'public' || vars.ENABLE_CODEQL == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
