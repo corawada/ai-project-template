@@ -1,0 +1,8 @@
+# Replace this placeholder before enabling required code-owner review.
+* @YOUR_GITHUB_ID
+
+# Changes that weaken project governance always require explicit ownership review.
+/.github/ @YOUR_GITHUB_ID
+/AGENTS.md @YOUR_GITHUB_ID
+/CLAUDE.md @YOUR_GITHUB_ID
+/scripts/ @YOUR_GITHUB_ID
