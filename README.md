@@ -66,7 +66,7 @@ flowchart LR
 
 ## カスタマイズ
 
-- `.github/CODEOWNERS` の `@YOUR_GITHUB_ID` を自分の GitHub ID に置換してください。
+- `.github/CODEOWNERS` の例を、自分の実在する GitHub ID または team で有効化してください。存在しない owner のまま code-owner review を必須化しないでください。
 - `scripts/check.sh` にプロジェクト固有の formatter、lint、型検査、テスト、build を追加してください。
 - Actions の固定バージョンと Dependabot の対象 ecosystem を利用技術に合わせてください。
 - 公開リポジトリでは Secret scanning、Push protection、Dependabot alerts も有効にしてください。

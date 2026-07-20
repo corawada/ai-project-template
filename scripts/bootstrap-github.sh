@@ -59,4 +59,4 @@ else
 fi
 
 echo "GitHub bootstrap complete for $repo."
-echo "Next: replace @YOUR_GITHUB_ID in .github/CODEOWNERS and review Settings > Rules > Rulesets."
+echo "Next: enable real owners in .github/CODEOWNERS and review Settings > Rules > Rulesets."

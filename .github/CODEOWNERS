@@ -1,8 +1,9 @@
-# Replace this placeholder before enabling required code-owner review.
-* @YOUR_GITHUB_ID
-
-# Changes that weaken project governance always require explicit ownership review.
-/.github/ @YOUR_GITHUB_ID
-/AGENTS.md @YOUR_GITHUB_ID
-/CLAUDE.md @YOUR_GITHUB_ID
-/scripts/ @YOUR_GITHUB_ID
+# GitHub ignores CODEOWNERS entries whose owners do not exist or lack access.
+# Add the real user/team below before requiring code-owner review. Keeping the
+# examples commented avoids silently shipping a broken @YOUR_GITHUB_ID owner.
+#
+# * @your-github-id
+# /.github/ @your-github-id
+# /AGENTS.md @your-github-id
+# /CLAUDE.md @your-github-id
+# /scripts/ @your-github-id

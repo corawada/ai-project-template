@@ -1,12 +1,15 @@
 name: codeql
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: "17 3 * * 1"
+  # A language-agnostic template cannot safely guess the project's CodeQL
+  # language. Run this once manually after adding application code, then add
+  # pull_request/push/schedule triggers for that project.
+  workflow_dispatch:
+    inputs:
+      languages:
+        description: Comma-separated CodeQL language identifiers
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -14,16 +17,12 @@ permissions:
 
 jobs:
   analyze:
-    name: analyze actions
-    # Code scanning is available by default for public repositories. A private
-    # repository must enable GitHub Advanced Security first, then create the
-    # repository variable ENABLE_CODEQL=true to opt in to this job.
-    if: github.event.repository.visibility == 'public' || vars.ENABLE_CODEQL == 'true'
+    name: analyze selected languages
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: github/codeql-action/init@v3
         with:
-          languages: actions
+          languages: ${{ inputs.languages }}
       - uses: github/codeql-action/analyze@v3
