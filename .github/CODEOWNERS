@@ -1,0 +1,9 @@
+# GitHub ignores CODEOWNERS entries whose owners do not exist or lack access.
+# Add the real user/team below before requiring code-owner review. Keeping the
+# examples commented avoids silently shipping a broken @YOUR_GITHUB_ID owner.
+#
+# * @your-github-id
+# /.github/ @your-github-id
+# /AGENTS.md @your-github-id
+# /CLAUDE.md @your-github-id
+# /scripts/ @your-github-id

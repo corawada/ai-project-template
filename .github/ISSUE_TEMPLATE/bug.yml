@@ -1,0 +1,45 @@
+name: 不具合報告
+description: 再現可能な不具合を報告する
+title: "[Bug]: "
+labels: ["type: bug", "status: triage"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 再現手順
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する動作
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動作
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境
+      description: OS、バージョン、コミット SHA。秘密情報は除いてください。
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 修正の受け入れ条件
+      value: |
+        - [ ] 再現テストが追加されている
+        - [ ] 修正後にテストが成功する

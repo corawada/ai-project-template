@@ -1,0 +1,44 @@
+name: 仕様策定
+description: 実装前に requirements / design / tasks を策定する
+title: "[Spec]: "
+labels: ["type: spec", "status: triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 解決する問題
+      description: 実装方法ではなく、利用者と課題を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 期待する成果
+      description: 観測・検証できる状態を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: スコープと対象外
+      value: |
+        ## 対象
+        -
+        ## 対象外
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 制約・リスク
+      description: 互換性、データ、セキュリティ、性能、期日など。
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: 仕様策定の準備
+      options:
+        - label: steering (`.kiro/steering/`) の前提を確認した
+          required: true
+        - label: シークレット・個人情報・本番データを含めていない
+          required: true

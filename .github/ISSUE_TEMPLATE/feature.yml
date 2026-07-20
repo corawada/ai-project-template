@@ -1,0 +1,39 @@
+name: 機能提案
+description: 新しい機能や改善を提案する
+title: "[Feature]: "
+labels: ["type: feature", "status: triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 解決したい課題
+      description: 誰が、何に困っているかを書いてください。
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 期待する結果
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 受け入れ条件
+      description: 検証可能なチェックリストにしてください。
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: 対象外
+      description: 今回あえて行わないことを書いてください。
+  - type: dropdown
+    id: breaking
+    attributes:
+      label: 破壊的変更の可能性
+      options: [なし, あり, 不明]
+    validations:
+      required: true
