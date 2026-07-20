@@ -13,9 +13,10 @@ Codex と Claude Code を安全に併用し、変更の意図・検証結果・�
    ```bash
    ./scripts/bootstrap-github.sh
    ```
-4. Issue を作成し、作業ブランチを切ります。
+4. Issue を作成し、先に作業ブランチへ移ってから仕様書の雛形を作ります。
    ```bash
    git switch -c feat/123-short-description
+   ./scripts/new-spec.sh 123 short-description
    ```
 5. Codex または Claude Code に Issue URL と受け入れ条件を渡します。AI は `AGENTS.md` / `CLAUDE.md` の制約に従います。
 6. `./scripts/check.sh` を通し、Pull Request を作成します。PR 本文に `Closes #123`、AI 利用、検証結果を記録してください。
@@ -53,6 +54,9 @@ flowchart LR
 
 | ファイル | 役割 |
 | --- | --- |
+| `.kiro/steering/` | 全仕様で共有するプロダクト・技術・構造の前提 |
+| `.kiro/settings/templates/specs/` | requirements・design・tasks の雛形 |
+| `.kiro/specs/` | Issue ごとの承認済み仕様と実装計画 |
 | `AGENTS.md` | Codex を含む AI エージェント共通の作業規約 |
 | `CLAUDE.md` | Claude Code の入口（共通規約を参照） |
 | `.github/pull_request_template.md` | 変更理由、AI 利用、検証、リスクの記録 |
@@ -62,6 +66,7 @@ flowchart LR
 | `scripts/check.sh` | ローカルと CI で同じ検査を実行 |
 | `scripts/guard-protected-branch.sh` | 保護ブランチ上の変更をローカルでも拒否 |
 | `docs/ai-development-guide.md` | AI への依頼・レビューの実践ガイド |
+| `docs/spec-driven-development.md` | AWS / Kiro 型の仕様書駆動開発ガイド |
 | `docs/branch-workflow.md` | 人が変更を追跡しやすいブランチ・コミット・PR運用 |
 
 ## カスタマイズ

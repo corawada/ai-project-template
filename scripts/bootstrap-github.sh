@@ -11,6 +11,7 @@ create_label() {
 create_label "type: feature" "1D76DB" "New functionality"
 create_label "type: bug" "D73A4A" "Something is not working"
 create_label "type: maintenance" "6F42C1" "Maintenance and refactoring"
+create_label "type: spec" "0052CC" "Requirements and design work"
 create_label "status: triage" "FBCA04" "Needs prioritization"
 create_label "ai-assisted" "BFDADC" "AI contributed to this change"
 create_label "ai-review-required" "D4C5F9" "Human review of generated changes required"

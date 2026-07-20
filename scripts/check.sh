@@ -12,9 +12,16 @@ while IFS= read -r -d '' file; do
   bash -n "$file"
 done < <(find scripts .githooks -type f -name '*.sh' -print0)
 
+echo "==> Checking specification structure"
+./scripts/check-specs.sh
+
 echo "==> Checking required governance files"
 required=(
   AGENTS.md CLAUDE.md .github/CODEOWNERS
+  .kiro/steering/product.md .kiro/steering/tech.md .kiro/steering/structure.md
+  .kiro/settings/templates/specs/requirements.md
+  .kiro/settings/templates/specs/design.md
+  .kiro/settings/templates/specs/tasks.md
   .github/pull_request_template.md .github/workflows/quality.yml
 )
 for file in "${required[@]}"; do
